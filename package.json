@@ -1,0 +1,41 @@
+{
+  "name": "designer-news",
+  "version": "0.0.1",
+  "description": "Designer News API client",
+  "keywords": [
+    "layervault",
+    "designer news",
+    "DN",
+    "api",
+    "client"
+  ],
+  "homepage": "https://developers.news.layervault.com",
+  "repository": "git@github.com:layervault/designer_news_js_client.git",
+  "author": {
+    "name": "Ryan LeFevre",
+    "email": "ryan@layervault.com",
+    "url": "http://github.com/meltingice"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/layervault/designer_news_js_client/blob/master/LICENSE"
+  }],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "coffee-script": "~ 1.6.3",
+    "needle": "~ 0.6.3",
+    "rsvp": "~ 2.0.4"
+  },
+  "devDependencies": {
+    "mocha": "~ 1.15.1",
+    "expect.js": "~ 0.2.0",
+    "nock": "~ 0.27.0",
+    "codo": "~ 2.0.2"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive --compilers coffee:coffee-script",
+    "test-watch": "./node_modules/mocha/bin/mocha --recursive --compilers coffee:coffee-script --watch"
+  }
+}
