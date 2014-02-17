@@ -36,14 +36,6 @@ module.exports = class API
           resolve(body)
           cb(null, body)
         else
-          # Access token is expired. We must refresh it and attempt the request again.
-          if body.error is 'invalid_request'
-            @client.auth.refreshTokens()
-              .then((tokens) => @get(endpoint, data, cb, options))
-              .fail((error) => reject(error))
-
-            return
-
           reject(body)
           cb(body, null)
 
@@ -69,14 +61,6 @@ module.exports = class API
           resolve(body)
           cb(null, body)
         else
-          # Access token is expired. We must refresh it and attempt the request again.
-          if body.error is 'invalid_request'
-            @client.auth.refreshTokens()
-              .then((tokens) => @post(endpoint, data, cb, options))
-              .fail((error) => reject(error))
-
-            return
-
           reject(body)
           cb(body, null)
 
@@ -100,14 +84,6 @@ module.exports = class API
           resolve(body)
           cb(null, body)
         else
-          # Access token is expired. We must refresh it and attempt the request again.
-          if body.error is 'invalid_request'
-            @client.auth.refreshTokens()
-              .then((tokens) => @delete(endpoint, data, cb, options))
-              .fail((error) => reject(error))
-
-            return
-
           reject(body)
           cb(body, null)
 
@@ -131,14 +107,6 @@ module.exports = class API
           resolve(body)
           cb(null, body)
         else
-          # Access token is expired. We must refresh it and attempt the request again.
-          if body.error is 'invalid_request'
-            @client.auth.refreshTokens()
-              .then((tokens) => @put(endpoint, data, cb, options))
-              .fail((error) => reject(error))
-
-            return
-
           reject(body)
           cb(body, null)
 

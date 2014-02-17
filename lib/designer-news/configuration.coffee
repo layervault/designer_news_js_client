@@ -8,7 +8,6 @@ module.exports = class Configuration
     @oauthKey = null
     @oauthSecret = null
     @accessToken = null
-    @refreshToken = null
     @apiBase = "https://api-news.layervault.com"
     @apiPath = "/api/v1"
 

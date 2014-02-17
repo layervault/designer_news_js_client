@@ -29,29 +29,7 @@ module.exports = class Authenticate
           return
 
         @config.accessToken = body.access_token
-        @config.refreshToken = body.refresh_token
-        data = accessToken: @config.accessToken, refreshToken: @config.refreshToken
-
-        @trigger 'authorized', data
-        resolve(data)
-        cb(null, data)
-
-  refreshTokens: (cb = ->) ->
-    new RSVP.Promise (resolve, reject) =>
-      needle.post @tokenEndpoint,
-        grant_type: 'refresh_token',
-        client_id: @config.oauthKey,
-        client_secret: @config.oauthSecret,
-        refresh_token: @config.refreshToken
-      , (error, resp, body) =>
-        if error?
-          reject(error)
-          cb(error, null)
-          return
-
-        @config.accessToken = body.access_token
-        @config.refreshToken = body.refresh_token
-        data = accessToken: @config.accessToken, refreshToken: @config.refreshToken
+        data = accessToken: @config.accessToken
 
         @trigger 'authorized', data
         resolve(data)
