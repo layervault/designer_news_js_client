@@ -82,7 +82,7 @@ client.auth.withPassword('username', 'password').then(function (resp) {
 
 ## Links
 
-* [LayerVault API Documentation](https://developers.layervault.com)
+* [API Documentation](https://developers.news.layervault.com)
 
 ## Author
 
