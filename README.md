@@ -1,6 +1,6 @@
 # Designer News API
 
-NodeJS client for accessing the [Designer News API](https://developers.news.layervault.com).
+NodeJS client for accessing the [Designer News API](http://developers.news.layervault.com).
 
 ## Installation
 
