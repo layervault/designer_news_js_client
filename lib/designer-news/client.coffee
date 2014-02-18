@@ -2,6 +2,7 @@ Authenticate = require './authenticate'
 API = require './api'
 
 Stories = require './stories'
+Comments = require './comments'
 
 # The API client base. Holds references to our authentication and configuration.
 # It lets you choose an organization for the API request, and the other classes
@@ -15,6 +16,7 @@ module.exports = class Client
     @api = new API(@, @config)
 
     @stories = new Stories(@api)
+    @comments = new Comments(@api)
 
   # Fetches information about the logged in user
   #
