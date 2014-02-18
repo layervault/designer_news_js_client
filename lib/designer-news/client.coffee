@@ -1,8 +1,9 @@
-Authenticate = require './authenticate'
-API = require './api'
+Authenticate  = require './authenticate'
+API           = require './api'
 
-Stories = require './stories'
-Comments = require './comments'
+Stories   = require './stories'
+Comments  = require './comments'
+Motd      = require './motd'
 
 # The API client base. Holds references to our authentication and configuration.
 # It lets you choose an organization for the API request, and the other classes
@@ -17,8 +18,9 @@ module.exports = class Client
 
     @stories = new Stories(@api)
     @comments = new Comments(@api)
+    @motd = new Motd(@api)
 
   # Fetches information about the logged in user
   #
   # @param [Function] cb The finished callback
-  me: (cb = ->) -> @api.get '/me', {}, cb.bind(@)
+  me: (cb = ->) -> @api.get '/me', {}, cb
