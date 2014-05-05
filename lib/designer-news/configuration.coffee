@@ -18,3 +18,5 @@ module.exports = class Configuration
   #
   # @param [Function] cb Executes the callback under the context of this object
   setup: (cb) -> cb.call(@)
+
+  hasUser: -> @accessToken?

@@ -22,8 +22,11 @@ module.exports = class API
   # @option options [Boolean] excludeApiPath Should we include the API path on the base domain?
   # @option options [Boolean] auth Should we add the Authorization header?
   get: (endpoint, data = {}, cb = (->), options = {}) ->
-    headers = {}
-    headers["Authorization"] = "Bearer #{@config.accessToken}" unless options.auth is false
+    if @config.hasUser()
+      headers = {}
+      headers["Authorization"] = "Bearer #{@config.accessToken}" unless options.auth is false
+    else
+      data.client_id = @config.oauthKey
 
     url = @apiUrl(endpoint, options)
     url += "?#{qs.stringify(data)}" unless Object.keys(data).length is 0

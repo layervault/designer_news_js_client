@@ -23,6 +23,8 @@ module.exports = class Authenticate
         client_id: @config.oauthKey
         client_secret: @config.oauthSecret
       , (error, resp, body) =>
+        error or= body.error
+
         if error?
           reject(error)
           cb(error, null)
